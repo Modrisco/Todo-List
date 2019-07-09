@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'polls.apps.PollsConfig',
     'tasks.apps.TasksConfig',
     'customers.apps.CustomersConfig'
 ]

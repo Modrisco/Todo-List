@@ -80,12 +80,15 @@ class CustomersList extends Component {
                             <td>{c.description}</td>
                             <td>
                                 <button  onClick={(e)=> this.handleDelete(e,c.pk) }> Delete</button>
-                                <a  href={"/customer/" + c.pk}> Update</a>
+                                <a  href={"/customers/" + c.pk}> Update</a>
                             </td>
                         </tr>)}
                     </tbody>
                 </table>
                 <button className="btn btn-primary" onClick= { this.nextPage }>Next</button>
+                <button className="btn">
+                    <a href="/customers/new">New</a>
+                </button>
 
             </div>
         );

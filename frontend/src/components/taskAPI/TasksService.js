@@ -1,13 +1,16 @@
 import axios from 'axios'
 // const API_URL = 'http://localhost:8000'
 
+axios.defaults.xsrfHeaderName = "X-CSRFToken"
+axios.defaults.xsrfCookieName = 'csrftoken'
+
 export default class TasksService {
 
     constructor() {}
 
     getTasks() {
         console.log("get tasks")
-        const url = `/api/tasks`
+        const url = `/api/tasks/`
         console.log(url)
         return axios.get(url).then(response => response.data)
     }

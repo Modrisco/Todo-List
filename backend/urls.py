@@ -20,8 +20,7 @@ from tasks import taskViews
 from django.conf.urls import url
 
 urlpatterns = [
-    path('polls/', include('polls.urls')),
-    # path('tasks/', include('tasks.urls')),
+    path('tasks/', include('tasks.urls')),
     path('admin/', admin.site.urls),
     url(r'^api/customers/$', customerViews.customers_list),
     url(r'^api/customers/(?P<pk>[0-9]+)$', customerViews.customers_detail),

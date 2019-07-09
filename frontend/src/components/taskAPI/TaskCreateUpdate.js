@@ -78,29 +78,29 @@ class TaskCreateUpdate extends Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
-                    {/*<label>*/}
-                        {/*First Name:</label>*/}
-                    {/*<input className="form-control" type="text" ref='firstName' />*/}
+                    <label>
+                        First Name:</label>
+                    <input className="form-control" type="text" ref='firstName' />
 
-                    {/*<label>*/}
-                        {/*Last Name:</label>*/}
-                    {/*<input className="form-control" type="text" ref='lastName'/>*/}
+                    <label>
+                        Last Name:</label>
+                    <input className="form-control" type="text" ref='lastName'/>
 
-                    {/*<label>*/}
-                        {/*Phone:</label>*/}
-                    {/*<input className="form-control" type="text" ref='phone' />*/}
+                    <label>
+                        Phone:</label>
+                    <input className="form-control" type="text" ref='phone' />
 
-                    {/*<label>*/}
-                        {/*Email:</label>*/}
-                    {/*<input className="form-control" type="text" ref='email' />*/}
+                    <label>
+                        Email:</label>
+                    <input className="form-control" type="text" ref='email' />
 
-                    {/*<label>*/}
-                        {/*Address:</label>*/}
-                    {/*<input className="form-control" type="text" ref='address' />*/}
+                    <label>
+                        Address:</label>
+                    <input className="form-control" type="text" ref='address' />
 
-                    {/*<label>*/}
-                        {/*Description:</label>*/}
-                    {/*<textarea className="form-control" ref='description' ></textarea>*/}
+                    <label>
+                        Description:</label>
+                    <textarea className="form-control" ref='description' ></textarea>
 
 
                     <input className="btn btn-primary" type="submit" value="Submit" />

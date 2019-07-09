@@ -20,7 +20,7 @@ class TasksList extends Component {
         var self = this
         taskService.getTasks().then(function (result) {
             console.log(result)
-            self.setState({ tasks: result.data, nextPageURL: result.nextLink })
+            self.setState({ tasks: result.data, nextPageURL: result.nextlink })
         })
     }
 
@@ -31,7 +31,7 @@ class TasksList extends Component {
                 return obj.pk !== pk
             })
 
-            self.setState({ customers: newArr })
+            self.setState({ tasks: newArr })
         })
     }
 
@@ -39,7 +39,7 @@ class TasksList extends Component {
         var self = this
         console.log(this.state.nextPageURL)
         taskService.getTasksByURL(this.state.nextPageURL).then((result) => {
-            self.setState({ tasks: result.data, nextPageURL: result.nextLink })
+            self.setState({ tasks: result.data, nextPageURL: result.nextlink })
         })
     }
 
@@ -73,12 +73,15 @@ class TasksList extends Component {
                             <td>{t.task_priority}</td>
                             <td>
                                 <button onClick={(e) => this.handleDelete(e, t.pk)}>DELETE</button>
-                                <a href={"/tasks/" + t.pk}>UPDATE</a>
+                                <button href={"/tasks/" + t.pk}>UPDATE</button>
                             </td>
                         </tr>)}
                     </tbody>
                 </table>
                 <button className="btn btn-primary" onClick={ this.nextPage }>NEXT</button>
+                <button className="btn">
+                    {/*<a href="">New</a>*/}
+                </button>
             </div>
         )
     }

@@ -3,10 +3,8 @@ import { connect } from 'react-redux'
 import { BrowserRouter } from  'react-router-dom'
 import { Route, Link } from 'react-router-dom'
 
-import CustomersList from '../../CustomersList'
-import CustomerCreateUpdate from '../../CustomerCreateUpdate'
-import './styles/styles.css'
-
+import TasksList from '../../components/taskAPI/TasksList'
+import TaskCreateUpdate from '../../components/taskAPI/TaskCreateUpdate'
 
 const BaseLayout = () => (
     <div className="container-fluid">
@@ -16,7 +14,7 @@ const BaseLayout = () => (
             </a>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
-                    <a className="nav-item nav-link" href="../">HOW IT WORKS</a>
+                    <a className="nav-item nav-link" href="/">HOW IT WORKS</a>
                     <a className="nav-item nav-link" href="/">TEMPLATE</a>
                     <a className="nav-item nav-link" href="/">PREMIUM</a>
                     <a className="nav-item nav-link" href="/">BUSINESS</a>
@@ -38,38 +36,35 @@ const BaseLayout = () => (
         </section>
         ​
         <div className="content">
-            <Route path="/" exact component={CustomersList} />
-            <Route path="/customer/:pk"  component={CustomerCreateUpdate} />
-            <Route path="/customer/" exact component={CustomerCreateUpdate} />
-            ​
+            <Route path="/tasks" exact component={TasksList} />
+            <Route path="/tasks/:pk"  component={TaskCreateUpdate} />
+            <Route path="/tasks/new" exact component={TaskCreateUpdate} />
+        ​
         </div>
         ​
     </div>
 )
 
-class Home extends Component {
+class Task extends Component {
     constructor(props) {
         super(props);
         this.state = {
         }
     }
 
-    _renderButtons() {
-        return (
-            <React.Fragment>
-            </React.Fragment>
-        )
-    }
+    // _renderButtons() {
+    //     return (
+    //         <React.Fragment>
+    //         </React.Fragment>
+    //     )
+    // }
     render() {
         return (
             <div>
                 <BrowserRouter/>
                     <BaseLayout/>
                 <BrowserRouter/>
-                {this._renderButtons()}
-                <Link to='/login'>
-                    <button className="btn btn-success">login page</button>
-                </Link>
+                {/*{this._renderButtons()}*/}
             </div>
         );
     }
@@ -78,6 +73,7 @@ class Home extends Component {
 let mapStateToProps = (state) => ({
     user: state.user
 })
+const actionCreator = {}
 export default connect(
     mapStateToProps
-)(Home);
+)(Task);

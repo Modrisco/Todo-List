@@ -7,8 +7,9 @@ import {Router, Route, BrowserRouter, Switch} from 'react-router-dom'
 import {Provider} from 'react-redux'
 
 import store from './store'
-import App from './containers/Home';
+import App from './containers/Home'
 import Login from './containers/Login'
+import Task from './containers/Tasks'
 
 ReactDOM.render(
     <Provider store={store}>
@@ -16,6 +17,7 @@ ReactDOM.render(
             <Switch>
                 <Route path='/' exact component={App}></Route>
                 <Route path='/login' exact component={Login}></Route>
+                <Route path='/tasks' exact component={Task}></Route>
             </Switch>
         </BrowserRouter>
     </Provider>

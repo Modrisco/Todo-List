@@ -47,8 +47,8 @@ def customers_list(request):
 @api_view(['GET', 'PUT', 'DELETE'])
 def customers_detail(request, pk):
     """
- Retrieve, update or delete a customer by id/pk.
- """
+    Retrieve, update or delete a customer by id/pk.
+    """
     try:
         customer = Customer.objects.get(pk=pk)
     except Customer.DoesNotExist:

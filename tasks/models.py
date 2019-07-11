@@ -14,7 +14,7 @@ class Task(models.Model):
     task_title = models.CharField("title", max_length=255)
     create_date = models.DateTimeField('date created', auto_now_add=True)
     expire_date = models.DateTimeField('date expired')
-    task_state = models.BooleanField("has finished")
+    task_state = models.BooleanField("has finished", default=False, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     task_priority = models.IntegerField("priority")
 

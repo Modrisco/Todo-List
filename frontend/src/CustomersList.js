@@ -87,7 +87,7 @@ class CustomersList extends Component {
                 </table>
                 <button className="btn btn-primary" onClick= { this.nextPage }>Next</button>
                 <button className="btn">
-                    <a href="/customers/new">New</a>
+                    <a href="/customers/">New</a>
                 </button>
 
             </div>

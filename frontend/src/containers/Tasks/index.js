@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { BrowserRouter } from  'react-router-dom'
+// import { BrowserRouter } from  'react-router-dom'
 
 import TasksList from '../../components/taskAPI/TasksList'
 
 const BaseLayout = () => (
     <div className="container-fluid">​
         <div className="content">
+            <h2>All Todo Tasks</h2>
         ​   <TasksList/>
         </div>
     </div>
@@ -18,10 +19,11 @@ class Task extends Component {
         this.state = {
         }
     }
+
     render() {
         return (
             <div>
-                    <BaseLayout/>
+                <BaseLayout/>
             </div>
         );
     }
@@ -30,7 +32,6 @@ class Task extends Component {
 let mapStateToProps = (state) => ({
     user: state.user
 })
-const actionCreator = {}
 export default connect(
     mapStateToProps
 )(Task);

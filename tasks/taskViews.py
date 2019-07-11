@@ -28,7 +28,7 @@ def task_list(request):
         previousPage = 1
         tasks = Task.objects.all()
         page = request.GET.get('page', 1)
-        paginator = Paginator(tasks, 10)
+        paginator = Paginator(tasks, 5)
         try:
             data = paginator.page(page)
         except PageNotAnInteger:
@@ -48,6 +48,9 @@ def task_list(request):
 
     elif request.method == 'POST':
         serializer = TaskSerializer(data=request.data)
+        # print(serializer)
+        # print(serializer.is_valid())
+        # print(serializer.errors)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -72,7 +75,10 @@ def tasks_detail(request, pk):
         return Response(serializer.data)
 
     elif request.method == 'PUT':
+        print(request.data)
         serializer = TaskSerializer(task, data=request.data, context={'request': request})
+        print(serializer.is_valid())
+        print(serializer.errors)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)

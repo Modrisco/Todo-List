@@ -32,11 +32,20 @@ export default class TasksService {
 
     createTask(task) {
         const url = `/api/tasks/`
+        console.log(url)
         return axios.post(url, task)
     }
 
     updateTask(task) {
         const url = `/api/tasks/${task.pk}`
+        // console.log(task)
         return axios.put(url, task)
+    }
+
+    doneTask(task) {
+        const url = `/api/tasks/${task.pk}`
+        console.log(url)
+        task.t.task_state = true
+        return axios.put(url, task.t)
     }
 }

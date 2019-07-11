@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { BrowserRouter } from  'react-router-dom'
+// import { BrowserRouter } from  'react-router-dom'
 
 import CustomersList from '../../CustomersList'
 import './styles/styles.css'
@@ -10,19 +10,25 @@ const BaseLayout = () => (
     <div className="container-fluid">
         <section>
             <div align="center">
-                <h2>Help me</h2>
+                <img alt={"pic"} src={require('../../pubilc/images/todo1.jpg')}></img>
+            </div>
+            <div align="center">
+                <br></br>
+                <h2>Help you organize your time</h2>
             </div>
         </section>
         <hr className="td-m-v-0"></hr>
+        <br/>
+        <br/>
         <section>
             <div align="center">
-                <h2>Help you</h2>
+                <a href="/tasks"><h2>Let's create a new task!</h2></a>
             </div>
         </section>
         ​
-        <div className="content">
-            <CustomersList/>
-        </div>
+        {/*<div className="content">*/}
+            {/*<CustomersList/>*/}
+        {/*</div>*/}
         ​
     </div>
 )

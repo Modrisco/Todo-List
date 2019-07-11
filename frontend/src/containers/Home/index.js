@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 // import { BrowserRouter } from  'react-router-dom'
 
-import CustomersList from '../../CustomersList'
 import './styles/styles.css'
 
 
@@ -25,11 +24,6 @@ const BaseLayout = () => (
                 <a href="/tasks"><h2>Let's create a new task!</h2></a>
             </div>
         </section>
-        ​
-        {/*<div className="content">*/}
-            {/*<CustomersList/>*/}
-        {/*</div>*/}
-        ​
     </div>
 )
 

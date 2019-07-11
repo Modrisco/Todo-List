@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'tasks.apps.TasksConfig',
-    'customers.apps.CustomersConfig'
 ]
 
 MIDDLEWARE = [

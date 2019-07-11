@@ -9,7 +9,6 @@ import {Provider} from 'react-redux'
 import store from './store'
 import Home from './containers/Home'
 import Task from './containers/Tasks'
-import CustomerCreateUpdate from "./CustomerCreateUpdate";
 import TaskCreateUpdate from "./components/taskAPI/TaskCreateUpdate";
 
 
@@ -42,8 +41,6 @@ ReactDOM.render(
             <Switch>
                 <Route path='/' exact component={Home}/>
                 <Route path='/alltasks' exact component={Task}/>
-                <Route path="/customers/:pk"  component={CustomerCreateUpdate} />
-                <Route path="/customers" exact component={CustomerCreateUpdate} />
                 <Route path='/tasks' exact component={TaskCreateUpdate}/>
                 <Route path="/tasks/:pk"  component={TaskCreateUpdate} />
                 <Route component={Page404} />
